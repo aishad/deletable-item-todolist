@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import TodoItem from './TodoItem.js';
 
 class App extends Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends Component {
     return (
       <div className="App">
         <ul>
-          {this.state.items.map(item => (<li>{item}</li>))}
+          {this.state.items.map(item => (<TodoItem description={item}/>))}
         </ul>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChange} value={this.state.textEntered} />
